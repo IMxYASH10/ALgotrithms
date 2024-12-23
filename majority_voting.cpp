@@ -13,7 +13,19 @@ int find_majority (vector<int>nums, int n){
         }
         else votes--;
     }
-    return candidate;
+    int target = candidate;
+    votes = 0;
+    for(int i = 0; i < nums.size(); i++){
+        if (target == nums[i]){
+            votes++;
+        }
+    }
+    if (votes < n / 2) {
+        return -1;
+    }
+    else {
+        return candidate;
+    }
 };
 int main ()
 {   
